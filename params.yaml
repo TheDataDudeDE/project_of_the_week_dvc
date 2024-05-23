@@ -1,0 +1,7 @@
+n_estimators: 100
+random_state: 42
+test_size: 0.2
+data_source: "data/iris.csv"
+processed_data_source: "data/processed/processed_iris.csv"
+test_data_path: "data/processed/test_iris.csv"
+model_path: "model/model.pkl"

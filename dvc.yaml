@@ -1,0 +1,11 @@
+stages:
+  process:
+    cmd: python src/process.py
+    deps:
+    - data/iris.csv
+    - src/process.py
+    params:
+    - data_source
+    - processed_data_source
+    outs:
+    - data/processed

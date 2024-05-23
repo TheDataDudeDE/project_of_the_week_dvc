@@ -1,0 +1,23 @@
+schema: '2.0'
+stages:
+  process:
+    cmd: python src/process.py
+    deps:
+    - path: data/iris.csv
+      hash: md5
+      md5: 341a3b5244f213282b7b0920b729c592
+      size: 3975
+    - path: src/process.py
+      hash: md5
+      md5: 96e471e404b6156250342255503f23ec
+      size: 1233
+    params:
+      params.yaml:
+        data_source: data/iris.csv
+        processed_data_source: data/processed/processed_iris.csv
+    outs:
+    - path: data/processed
+      hash: md5
+      md5: eff651a0a580aa4f7bcacb3bf589fd7b.dir
+      size: 2676
+      nfiles: 2
