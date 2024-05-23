@@ -9,7 +9,7 @@ def load_and_preprocess():
         params = yaml.safe_load(f)
 
     # Load the data
-    df = pd.read_csv(params["data_source"], header=None)
+    df = pd.read_csv(params["data_source"], header=0)
     df.columns = [
         "sepal_length",
         "sepal_width",

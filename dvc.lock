@@ -9,8 +9,8 @@ stages:
       size: 3975
     - path: src/process.py
       hash: md5
-      md5: 96e471e404b6156250342255503f23ec
-      size: 1233
+      md5: f9fa700f3f41c38060b4ed3f9c273eda
+      size: 1230
     params:
       params.yaml:
         data_source: data/iris.csv
@@ -18,6 +18,28 @@ stages:
     outs:
     - path: data/processed
       hash: md5
-      md5: eff651a0a580aa4f7bcacb3bf589fd7b.dir
-      size: 2676
+      md5: 9b918232e582a0c254845c5f667365d2.dir
+      size: 2816
       nfiles: 2
+  training:
+    cmd: python src/training.py
+    deps:
+    - path: data/processed/processed_iris.csv
+      hash: md5
+      md5: 99cca3b964b15b3ead4a0c26733a3de5
+      size: 2488
+    - path: src/process.py
+      hash: md5
+      md5: f9fa700f3f41c38060b4ed3f9c273eda
+      size: 1230
+    params:
+      params.yaml:
+        model_path: model/model.pkl
+        n_estimators: 100
+        processed_data_source: data/processed/processed_iris.csv
+        random_state: 42
+    outs:
+    - path: model/model.pkl
+      hash: md5
+      md5: 4a4a5c66c5dc05fd55bc6698b549e2f3
+      size: 160103

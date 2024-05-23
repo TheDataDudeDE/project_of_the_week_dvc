@@ -9,3 +9,15 @@ stages:
     - processed_data_source
     outs:
     - data/processed
+  training:
+    cmd: python src/training.py
+    deps:
+    - data/processed/processed_iris.csv
+    - src/process.py
+    params:
+    - model_path
+    - n_estimators
+    - processed_data_source
+    - random_state
+    outs:
+    - model/model.pkl
