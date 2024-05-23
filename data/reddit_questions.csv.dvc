@@ -1,5 +1,0 @@
-outs:
-- md5: 4391eb4a45d0b6521d3be3f6db6a4c42
-  size: 27408406
-  hash: md5
-  path: reddit_questions.csv
